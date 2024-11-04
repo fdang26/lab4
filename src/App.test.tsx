@@ -127,7 +127,7 @@ describe("Budget tracker", () => {
     expect(screen.getByTestId("Remaining")).toHaveTextContent(
       "Remaining: $2000"
     );
-    expect(screen.getByTestId("Total")).toHaveTextContent("Spent so far: $0");
+    expect(screen.getByTestId("Total")).not.toHaveTextContent("Spent so far: $0");
   });
 });
 

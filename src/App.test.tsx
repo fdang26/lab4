@@ -131,10 +131,10 @@ describe("Budget tracker", () => {
   });
 });
 
-describe("failed test", () => {
-  test("test should fail", () => {
-    render(<App />);
+// describe("failed test", () => {
+//   test("test should fail", () => {
+//     render(<App />);
     
-    expect(screen.getByPlaceholderText("Expense name")).not.toBeInTheDocument();
-  })
-})
+//     expect(screen.getByPlaceholderText("Expense name")).not.toBeInTheDocument();
+//   })
+// })

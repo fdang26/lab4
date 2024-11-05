@@ -20,6 +20,22 @@ export function createExpenseServer(req: Request, res: Response, expenses: Expen
 
 export function deleteExpense(req: Request, res: Response, expenses: Expense[]) {
     // TO DO: Implement deleteExpense function
+        const { id, cost, description } = req.body;
+
+    if (!description || !id || !cost) {
+        return res.status(400).send({ error: "Missing required fields" });
+    }
+
+    const newExpense: Expense = {
+        id: id,
+        description,
+        cost,
+    };
+
+    expenses = expenses.filter(
+        (expense) => expense.id !== newExpense.id
+    );
+    res.status(201).send(newExpense);
 }
 
 export function getExpenses(req: Request, res: Response, expenses: Expense[]) {
